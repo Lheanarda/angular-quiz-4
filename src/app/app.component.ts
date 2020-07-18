@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularQuiz04';
+
+  oddNumberArr = [];
+  evenNumberArr=[];
+
+  receiveCurrentNumber:number;
+  onCurrentNumberReceived(numb:number){
+    this.receiveCurrentNumber = numb;
+    if(this.receiveCurrentNumber%2 === 0) this.evenNumberArr.push(this.receiveCurrentNumber);
+    else this.oddNumberArr.push(this.receiveCurrentNumber);
+  }
+
 }
